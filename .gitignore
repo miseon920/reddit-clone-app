@@ -1,0 +1,4 @@
+data
+
+#https://shilan.tistory.com/entry/gitignore-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99
+#사용자가 원하지 않는 파일들을 자동적으로 git 커밋 대상에서 제외 시켜주는 것이다.

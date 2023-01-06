@@ -1,0 +1,23 @@
+version: "3"
+services:
+   db:
+      image: postgres:latest
+      container_name: postgres
+      restart: always
+      ports:
+         - "5432:5432"
+      environment:
+         POSTGRES_USER: "${DB_USER_ID}"
+         POSTGRES_PASSWORD: "${DB_USER_PASSWORD}"
+      volumes:
+         - ./data:/var/lib/postgresql/data
+
+#주석
+#Docker Compose는 여러 개의 컨테이너(container)로 구성된 애플리케이션을 관리하기 위한 간단한 오케스트레이션(Orchestration) 도구
+#volumes은 데이터를 지워도 로컬에 남아있게 하기위해 작성
+#POSTGRES_USER:"postgres" 등 아이디 패스워드는 환경변수로 작성하여 노출되지 않게 함 ${DB_USER_ID}로 변경하여 작성
+#환경변수로 작성한 것을 .env 파일안에 실제 아이디와 패스워드 기입
+#env와 도커 위치는 같은 위치에 있어야함
+#도커 실행후 이미지를 다운하구 해야함!
+#들여쓰기가 띄워쓰기+탭으로 해야함...why..?
+#https://watch-n-learn.tistory.com/40
