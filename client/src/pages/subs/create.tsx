@@ -86,7 +86,7 @@ export const getServerSideProps: GetServerSideProps = async({req,res})=>{
         if(!cookie) throw new Error("토큰 쿠기가 없습니다.");
         
         //쿠키가 있다면 그 쿠키를 이용하여 백엔드에서 인증처리하기
-        await axios.get("/auth/me",{headers:{cookie}});
+        await axios.get(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/auth/me`,{headers:{cookie}});
 
         return {props:{}}
     } catch (error) {

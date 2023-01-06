@@ -21,7 +21,7 @@ const app = express(); //app은 express 객체
  * cros 에러 해결 
  * 서버쪽에  npm i cors --save 설치하여 해결함
  */
-const orign = "http://localhost:3000"; //3000번과 4000번이 달라서 나타나는 현상 해결
+const orign = process.env.APP_URL; //3000번과 4000번이 달라서 나타나는 현상 해결
 
 app.use(cors({
     orign,
@@ -58,7 +58,7 @@ let port = 4000;
 app.listen(port,async () => { //원하는 포트에 서버를 오픈하는 문법
     
     
-    console.log(`server running at http://localhost:${port}`); //백쪽이라 터미널에 찍힘
+    console.log(`server running at ${process.env.APP_URL}`); //백쪽이라 터미널에 찍힘
     AppDataSource.initialize().then(async () => {
 
         console.log("Inserting a new user into the database...")

@@ -291,7 +291,37 @@ export default function Home() {
 
 /**
  * Tailwind CSS IntelliSense 확장파일을 깔아서 tailwind에 해당 클래스가 있는지 없는지 확인할 수 있음
+ * 
+ * 
+ * 
+ * #############배포하기
+ * 
+ * ###배포전 client 부분 수정하기
  * #배포시 aws ce2 이용하기
  * https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04 
  * sudo systemctl status docker 까지 설치하기!
- */
+ * 
+ * env를 개발환경과 배포환경에 맞게 따로 사용하기 위해 설치
+ * npm i env-cmd --save
+ * 
+ * package.json에 배포환경일때 와 개발환경일때 스크립트 변경하기
+ * 
+ * pm2 모듈 사용을 위해 ecosystem.config.js 만들기
+ * 
+ * 배포시에 그냥 올리면 이미지가 에러나므로 설치
+ * //npm i sharp --save
+ *  * 
+ * 
+ * 로컬로 적은 것들 환경변수로 바꾸기 url 등
+ * 
+ * next.config.js 도메인에 localhost와 배포할 서버주소 넣기
+ * 
+ * ###배포전 server부분 수정하기
+ *  * npm i env-cmd --save
+ * 설치 후 env 파일 변경하기
+ * 
+ *package.json에 배포환경일때 와 개발환경일때 스크립트 변경하기
+ *pm2 모듈 사용을 위해 ecosystem.config.js 만들기
+ * 
+  * 로컬로 적은 것들 환경변수로 바꾸기 url 등
+ * */
