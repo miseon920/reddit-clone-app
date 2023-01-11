@@ -57,11 +57,15 @@ env - 보이지 않는곳에 아이디와 패스워드 저장
 객체와 관계형 데이터베이스의 데이터를 자동으로 매핑(연결)해준다.
 -모델기반으로 데이터 베이스 테이블 체계를 자동으로 생성함
 -테이블간의 매핑(일대일,일대 다 및 다 대 다)를 만듬
--간단한 cli 명령을 제공(Command Line으로 컴퓨터를 동작할 수 있는 환경, Command Line은 입력과 출력의 형태로 동작하며 모두 text 형태로 이루어져 있다.)
-https://velog.io/@fstone/CLI-%EA%B0%9C%EB%85%90-%EB%B0%8F-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC
+-간단한 cli 명령을 제공
+ (Command Line으로 컴퓨터를 동작할 수 있는 환경, Command Line은 입력과 출력의 형태로 동작하며 모두 text 형태로 이루어져 있다.)
+ https://velog.io/@fstone/CLI-%EA%B0%9C%EB%85%90-%EB%B0%8F-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC
+ 
 -간단코딩으로 orm 프레임 워크를 사용하기 쉬움
 -다른 모듈과 쉽게 통합됨
+ 
 https://aonee.tistory.com/77
+ 
 3)reflect-metadata / 데코레이터는 클래스 선언과 멤버에 어노테이션과 메타-프로그래밍 구문을 추가할 수 있는 방법을 제공합니다.
  데코레이터는 JavaScript에 대한 2단계 제안이며 TypeScript의 실험적 기능으로 이용하므로 이것을 사용할수 있게 해주는것이 reflect-metadata 이다
 @expression 형식을 사용합니다. 여기서 expression은 데코레이팅 된 선언에 대한 정보와 함께 런타임에 호출되는 함수여야 합니다.
