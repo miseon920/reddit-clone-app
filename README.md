@@ -121,3 +121,42 @@ css에 문제가 없는지 미리 확인 하여 에러 로그를 준다.
 최상위에서 콘텍스트를 정리하여 둔것을 사용하기 위해서 import하여 적고 
 필요한곳에서 필요한것만 쓰기 위해 const dispatch = useAuthDispatch(); 등으로 디스패치하여 사용합니다.
 위의 정의내린 dispatch 형식에 전달할것을 인자로 넣어 사용합니다.
+
+#aws
+aws ec2 에서 인스턴스 생성
+1)ubuntu를 많이 사용해서 선택
+2) 인스턴스 유형은 프리티어 유형을 많이 사용 : te.micro
+
+1.git pull 
+2.docker 설치
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+참조
+##클라이언드
+3.npm install
+3.npm run build:prod
+4.왼쪽메뉴 네트워크 및 보안에서 보안그룹 추가하기
+* 인바운드 규칙 추가하기
+포트범위는 본인이 추가한 포트 추가(예 - 3000,4000,5232,80) 
+사용자 애니웨어로 할경우 어느곳에서나 접속가능
+5.인스턴스로 돌아가서 체크박스로 원하는 것 선택 후 작업-보안-보안그룹변경으로 위에 만든것을 선택 해 주어야함
+6.npm run start:prod
+7.프록시를 이용해 포트번호를 안치더라도 자동으로 80번으로 가게함 / 80번은 안보인다!
+sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+
+pm2 / 위까지 하고 앱을 끄면 서버가 종료되므로..pm2 실행
+
+1)node.js 애플리케이션을 계속 유지하기 위해
+2)node.js가 다운되면 pm2는 다운타임없이 자동으로 다시 복구함
+3)로드밸러스가 내장되어 있어 애플리케이션을 훨씬 쉽게 확장 할 수 있음
+4)리눅스,윈도우,맥OS에서 작동함
+5)애플리케이션의 로그를 관리하는 방법으로 도움이 될 수 있음
+6)js파일을 수정했을때 자동으로 프로세스를 껐다 켠다
+7).백그라운드에서 계속 실행 할수 있게 해줌
+8)single thread인 node.js를  Cluster모드를 이용하여 cpu코어 수만큼 프로세스를 지원할 수 있게 해준다.
+
+sudo npm install pm2 -g    //전역으로 깔림
+pm2 start ecosystem.config.js 
+
+##서버
+1.npm install
+2.pm2 start ecosystem.config.js 
